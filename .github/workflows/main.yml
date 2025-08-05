@@ -21,4 +21,4 @@ jobs:
           docker build -t youtube-clone .
           docker stop youtube-container || true
           docker rm youtube-container || true
-          docker run -d --name youtube-app -p 8082:80 youtube-container
+          docker run -d --name youtube-app -p 8082:80 youtube-clone
