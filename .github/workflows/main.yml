@@ -1,0 +1,22 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Copy files
+      - id: copy-files
+            cd ~/Youtube-clone
+            docker build -t youtube-clone .
+            docker stop youtube-container || true
+            docker rm youtube-container || true
+            docker run -d --name youtube-container -p 8082:80 youtube-clone
