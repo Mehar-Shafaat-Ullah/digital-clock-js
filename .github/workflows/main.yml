@@ -19,6 +19,5 @@ jobs:
           cd /home/ubntu22043/Downloads/Youtube-clone
           git pull
           docker build -t youtube-clone .
-          docker stop youtube-container || true
-          docker rm youtube-container || true
+          docker rm -f youtube-app || true
           docker run -d --name youtube-app -p 8082:80 youtube-clone
