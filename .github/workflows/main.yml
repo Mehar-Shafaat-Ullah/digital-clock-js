@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Copy files
-      - id: copy-files
+        id: copy-files
         run: |
-            cd ~/Youtube-clone
-            docker build -t youtube-clone .
-            docker stop youtube-container || true
-            docker rm youtube-container || true
-            docker run -d --name youtube-container -p 8082:80 youtube-clone
+          cd ~/Youtube-clone
+          docker build -t youtube-clone .
+          docker stop youtube-container || true
+          docker rm youtube-container || true
+          docker run -d --name youtube-container -p 8082:80 youtube-clone
