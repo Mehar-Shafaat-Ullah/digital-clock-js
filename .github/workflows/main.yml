@@ -15,6 +15,7 @@ jobs:
 
       - name: Copy files
       - id: copy-files
+        run: |
             cd ~/Youtube-clone
             docker build -t youtube-clone .
             docker stop youtube-container || true
